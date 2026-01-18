@@ -41,7 +41,7 @@ public class ConsoleApp {
     }
 
     public void eliminarSocio(Scanner scanner) {
-        System.out.print("DNI: ");
+        System.out.print("DNI a eliminar: ");
         String dni = scanner.nextLine().trim();
         if (dni.isEmpty()) {
             System.out.println("DNI vacío");
