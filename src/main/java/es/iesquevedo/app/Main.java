@@ -1,10 +1,16 @@
 package es.iesquevedo.app;
 
+import es.iesquevedo.dao.JsonSocioDao;
+import es.iesquevedo.dao.JsonSocioDaoImpl;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ConsoleApp app = new ConsoleApp();
+        // Inyección de dependencias simple a mano
+        String base = System.getProperty("user.dir");
+        JsonSocioDao socioDao = new JsonSocioDaoImpl(base + "/socios.json");
+        ConsoleApp app = new ConsoleApp(socioDao);
 
         try (Scanner scanner = new Scanner(System.in)) {
             boolean running = true;

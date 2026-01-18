@@ -11,9 +11,8 @@ public class ConsoleApp {
     private final JsonSocioDao socioDao;
 
     // los DAOs/servicio se crean internamente
-    public ConsoleApp() {
-        String base = System.getProperty("user.dir");
-        this.socioDao = new JsonSocioDao(base + "/socios.json");
+    public ConsoleApp(JsonSocioDao socioDao) {
+        this.socioDao = socioDao;
     }
 
     public void crearSocio(Scanner scanner) {
